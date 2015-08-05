@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Digevo.Viral.Gateway.Models.ShareCallback">
+    <Position X="9.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAgAAAAIACAAAAAAEAEAAAABAAAAAAAAA=</HashCode>
+      <FileName>Models\Entities\ShareCallback.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ShareIntent" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Digevo.Viral.Gateway.Models.Entities.ShareIntent">
+    <Position X="6.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAgAAAAAACAAAAAAEABAAAAAAABAAAAAA=</HashCode>
+      <FileName>Models\Entities\ShareIntent.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="ShareCallbacks" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Digevo.Viral.Gateway.Models.Entities.Campaign">
+    <Position X="0.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAgAQAEAAAAQQgAAAAEAAAAABAAEAAAAA=</HashCode>
+      <FileName>Models\Entities\Campaign.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="OnShareIntentTriggers" />
+      <Property Name="OnShareCallbackTriggers" />
+      <Property Name="OnShareConversionTriggers" />
+      <Property Name="ShareIntents" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Digevo.Viral.Gateway.Models.Entities.Trigger">
+    <Position X="6.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAgAQAAAAAAAAAAAAAEAAAAABAAAAAAAA=</HashCode>
+      <FileName>Models\Entities\Trigger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Digevo.Viral.Gateway.Models.Enums.TriggerType">
+    <Position X="3" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAIAAAEAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Enums\TriggerType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

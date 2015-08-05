@@ -1,0 +1,3 @@
+22-07-2015 12:12:10;DEBUG;Call ShortenUrl(url: 'http://famososenlamira.com.tempdomain.com', ShortenedUrl: 'http://viral.wml.cl/bbcc', shareIntent: 'Digevo.Viral.Gateway.Models.Entities.ShareIntent')
+22-07-2015 12:12:11;DEBUG;Call ShortenUrl(url: 'http://famososenlamira.com.tempdomain.com', ShortenedUrl: 'http://viral.wml.cl/bcaa', shareIntent: 'Digevo.Viral.Gateway.Models.Entities.ShareIntent')
+22-07-2015 12:12:39;DEBUG;Call ShortenUrl(url: 'http://famososenlamira.com.tempdomain.com', ShortenedUrl: 'http://viral.wml.cl/bcba', shareIntent: 'Digevo.Viral.Gateway.Models.Entities.ShareIntent')
