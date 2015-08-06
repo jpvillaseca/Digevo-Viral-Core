@@ -18,6 +18,7 @@ namespace Digevo.Viral.Gateway.Controllers
         private readonly ViralDataContext context = new ViralDataContext();
 
         // GET api/sharelink/1?user=jvillaseca&medium=Facebook&url=http%3A%2F%2Ffamososenlamira.com.tempdomain.com
+        [HttpGet]
         public async Task<HttpResponseMessage> Get(int id, string url, string user, string medium, string shareUrl)
         {
             string shortenedUrl = url; //Url is not shortened yet, but in case of an exception it's best to return the original url

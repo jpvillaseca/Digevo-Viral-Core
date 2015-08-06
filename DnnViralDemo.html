@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.js"></script><link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+    <script type="text/javascript">
+        function getInviteText() {
+            return encodeURIComponent(window.document.title);
+        }
+
+        function getInviteUrl() {
+            return "http://www.google.cl"
+            return encodeURIComponent(window.location.href);
+        }
+
+        function getDescription() {
+            return encodeURIComponent("Compartir");
+        }
+
+        var user = "jvillaseca";
+        var viralCoreEngineService = "http://localhost:10273/api/sharelink/1?url={webpage}&user={user}&medium={medium}";
+
+        function getFacebookViralUrl() {
+            return getViralUrl("Facebook", "https://www.facebook.com/sharer/sharer.php?u="+getInviteUrl());
+        }
+
+        function getTwitterViralUrl() {
+            return getViralUrl("Twitter", "https://twitter.com/intent/tweet?text="+getInviteText()+"&url="+getInviteUrl());
+        }
+
+        function getWhatsAppViralUrl() {
+            return getViralUrl("WhatsApp", "whatsapp://send?text="+getInviteText() + " " + getInviteUrl());
+        }
+
+        function getViralUrl(medium, url) {
+            return encodeURIComponent(viralCoreEngineService.replace('{webpage}', encodeURIComponent(url)).replace('{user}', user).replace('{medium}', medium));
+        }
+
+        function sharePopup(url) {
+            var winWidth = 520; var winHeight = 350;
+            var winTop = (screen.height / 2) - (winHeight / 2);
+            var winLeft = (screen.width / 2) - (winWidth / 2);
+            window.open(url, 'sharer', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,status=0,width=' + winWidth + ',height=' + winHeight);
+        }
+    </script>
+    <style>
+        .share {
+            background-size: 60px;
+            display: inline-block;
+            min-width: 32px;
+            min-height: 32px;
+            text-align: center;
+            vertical-align: middle;
+            padding: 4px;
+        }
+
+            .share > i {
+                color: #fff;
+            }
+
+        .facebook {
+            background-color: #305891;
+        }
+
+            .facebook > i {
+                padding-left: 10px;
+            }
+
+        .twitter {
+            background-color: #2ca8d2;
+        }
+
+        .whatsapp {
+            background-color: #29a628;
+        }
+    </style>
+</head>
+<body>
+    <a href="#" class="share facebook"><i class="fa fa-facebook fa-2x"></i></a>
+    <a href="#" class="share twitter"><i class="fa fa-twitter fa-2x"></i></a>
+    <a href="#" class="share whatsapp"><i class="fa fa-whatsapp fa-2x"></i></a>
+
+    <script type="text/javascript">
+        
+        (function pageSetup() {
+            $(".share.facebook").attr("href", "javascript:sharePopup('" + getFacebookViralUrl() + "')");
+
+            $(".share.twitter").attr("href", "javascript:sharePopup('" + getTwitterViralUrl() + "')");
+
+            $(".share.whatsapp").attr("href", "javascript:sharePopup('" + getWhatsAppViralUrl() + "')").attr("data-action", "share/whatsapp/share");
+        })();
+    </script>
+</body>
+</html>

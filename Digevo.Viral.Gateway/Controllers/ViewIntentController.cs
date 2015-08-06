@@ -18,6 +18,7 @@ namespace Digevo.Viral.Gateway.Controllers
         private readonly ViralDataContext context = new ViralDataContext();
 
         // GET api/viewintent?alias=7aqC&conversion=true
+        [HttpGet]
         public async Task<HttpResponseMessage> Get(string alias, bool isConversion = false)
         {
             string targetUrl = ConfigurationSettings.DefaultErrorPage;
