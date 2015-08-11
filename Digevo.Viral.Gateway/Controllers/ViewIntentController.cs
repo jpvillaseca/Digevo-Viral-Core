@@ -66,7 +66,7 @@ namespace Digevo.Viral.Gateway.Controllers
                 if (callback.IsOneTimeOnly && context.TriggerClaims.Any(tc => tc.TriggerID == callback.ID && tc.UserHandle == user))
                     continue;
 
-                tasks.Add(callback.Execute(user));
+                tasks.Add(callback.Execute(user, intent.SeedUserHandle));
                 context.TriggerClaims.Add(new TriggerClaim() { UserHandle = user, Trigger = callback, Campaign = intent.Campaign });
             }
 

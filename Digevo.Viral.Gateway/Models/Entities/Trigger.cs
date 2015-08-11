@@ -43,13 +43,14 @@ namespace Digevo.Viral.Gateway.Models.Entities
         /// </summary>
         /// <param name="UserHandle">User handle (username, phone)</param>
         /// <returns>True if succesful, false othwerwise</returns>
-        public async Task<bool> Execute(string UserHandle)
+        public async Task<bool> Execute(string UserHandle, string SeedUserHandle = "")
         {
             try
             {
                 var interpolatedTriggerAddress = TargetAddress.FormatWith(new
                 {
-                    UserHandle = UserHandle
+                    UserHandle = UserHandle,
+                    SeedUserHandle = SeedUserHandle
                 });
 
                 var request = (HttpWebRequest)WebRequest.Create(interpolatedTriggerAddress);

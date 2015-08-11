@@ -10,7 +10,7 @@ namespace Digevo.Viral.Gateway.Models.Infrastructure.UrlShortener
     public class WmlUrlShortener : IUrlShortener
     {
         //static readonly string ShortenBaseUrl = "http://viral.wml.cl/{Alias}";
-        static readonly string ShortenBaseUrl = "http://localhost:10273/api/viewintent?alias={Alias}";
+        static readonly string ShortenBaseUrl = "http://54.207.51.154:3567/api/viewintent?alias={Alias}";
 
         public async Task<string> ShortenUrlAsync(string url, string prefix = "", string alias = "")
         {

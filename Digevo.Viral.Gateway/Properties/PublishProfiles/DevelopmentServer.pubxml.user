@@ -23,10 +23,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/10/2015 14:02:28</publishTime>
     </File>
     <File Include="bin/Digevo.Viral.Gateway.dll">
-      <publishTime>08/05/2015 13:40:58</publishTime>
+      <publishTime>08/10/2015 14:17:09</publishTime>
     </File>
     <File Include="bin/Digevo.Viral.Gateway.pdb">
-      <publishTime>08/05/2015 13:40:58</publishTime>
+      <publishTime>08/10/2015 14:17:09</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>07/10/2015 13:00:15</publishTime>
@@ -404,7 +404,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/20/2015 17:53:22</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>08/05/2015 13:41:06</publishTime>
+      <publishTime>08/10/2015 14:17:14</publishTime>
     </File>
   </ItemGroup>
 </Project>
