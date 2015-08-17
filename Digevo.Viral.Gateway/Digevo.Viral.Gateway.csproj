@@ -156,12 +156,14 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\LandingController.cs" />
     <Compile Include="Controllers\ShareLinkController.cs" />
     <Compile Include="Controllers\ViewIntentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Entities\FuenteDelDeseo\UserData.cs" />
     <Compile Include="Models\Entities\TriggerClaim.cs" />
     <Compile Include="Models\Enums\TriggerType.cs" />
     <Compile Include="Models\Entities\Campaign.cs" />
