@@ -1,20 +1,68 @@
-﻿using System;
+﻿using Digevo.Viral.Gateway.Models;
+using Digevo.Viral.Gateway.Models.Entities;
+using Digevo.Viral.Gateway.Models.Entities.Landing;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace Digevo.Viral.Gateway.Controllers
 {
     public class LandingController : ApiController
     {
-        // POST api/landing
-        public void Post([FromBody]string value)
+        private readonly ViralDataContext context = new ViralDataContext();
+
+        // POST api/landing?campaignId=2
+        [HttpPost]
+        public async Task<HttpResponseMessage> Post(int campaignId, [FromBody]dynamic rawUserData)
         {
-            //TODO: Parsear input para que sea válido
-            //TODO: Ejecutar secuencia de triggers para gatillar envío de SMS (si es que hay que hacerlo, IsOneTimeOnly)
-            //TODO: Guardar en base de datos los datos del usuario (EF), aunque consiste en la ejecución de un trigger.
+            var userData = new UserData() { Name = rawUserData.Name, 
+                Phone = rawUserData.Phone, 
+                Birthday = rawUserData.Birthday, 
+                Email = rawUserData.Email, 
+                CreationDate = DateTimeOffset.Now };
+
+            var campaign = context.Campaigns.Include("OnShareConversionTriggers").FirstOrDefault(x => x.ID == campaignId);
+            if (campaign == null)
+                throw new ArgumentException("No campaign was found with an ID: " + campaignId);
+
+            var landingUser = context.LandingUsers.FirstOrDefault(user => user.Phone == userData.Phone || (user.Email == userData.Email && user.Phone == null));
+            if (landingUser == null)
+            {
+                context.LandingUsers.Add(userData);
+            }
+            else
+            {
+                landingUser.Phone = string.IsNullOrWhiteSpace(userData.Phone) ? landingUser.Phone : userData.Phone;
+                landingUser.Email = string.IsNullOrWhiteSpace(userData.Email) ? landingUser.Email : userData.Email;
+                landingUser.Birthday = (userData.Birthday == null) ? landingUser.Birthday : userData.Birthday;
+            }
+            
+            context.SaveChanges();
+
+            await TriggerCampaignTriggersAsync(campaign, landingUser, rawUserData);
+
+            return Request.CreateResponse(HttpStatusCode.OK);
+        }
+
+        private async Task TriggerCampaignTriggersAsync(Campaign campaign, UserData user, dynamic rawUserData)
+        {
+            //Run all triggers
+            var tasks = new List<Task>();
+            foreach (var trigger in campaign.OnShareConversionTriggers)
+            {
+                if (trigger.IsOneTimeOnly && context.TriggerClaims.Any(tc => tc.TriggerID == trigger.ID && tc.UserHandle == user.Phone))
+                    continue;
+
+                await trigger.Execute(rawUserData);
+                context.TriggerClaims.Add(new TriggerClaim() { UserHandle = user.Phone, Trigger = trigger, Campaign = campaign });
+            }
+            await Task.WhenAll(tasks);
+
+            await context.SaveChangesAsync();
         }
 
     }

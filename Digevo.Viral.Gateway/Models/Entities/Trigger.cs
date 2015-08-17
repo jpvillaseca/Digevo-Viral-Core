@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Web;
 using Digevo.Viral.Gateway.Models.Infrastructure;
 using Digevo.Viral.Gateway.Models.Infrastructure.Extensions;
+using System.Web.WebPages;
 
 namespace Digevo.Viral.Gateway.Models.Entities
 {
@@ -63,6 +64,29 @@ namespace Digevo.Viral.Gateway.Models.Entities
             catch(Exception ex)
             {
                 LogExtensions.Log.ErrorCall(ex, () => new { UserHandle, ID, TargetAddress });
+
+                return false;
+            }
+        }
+
+        public async Task<bool> Execute(dynamic triggerParameters)
+        {
+            try
+            {
+                // TODO: Agregar verbo http como parámetro al trigger, porque ahora no hace envíos POSTs.
+
+                var interpolatedTriggerAddress = StringFormatExtensions.FormatWith(TargetAddress, triggerParameters);
+
+                var request = (HttpWebRequest)WebRequest.Create(interpolatedTriggerAddress);
+                var response = (HttpWebResponse)await request.GetResponseAsync();
+
+                LogExtensions.Log.InfoCall(() => new { Operaton = "Executing trigger with params", triggerParameters });
+
+                return (int)response.StatusCode >= 200 && (int)response.StatusCode <= 399;
+            }
+            catch (Exception ex)
+            {
+                LogExtensions.Log.ErrorCall(ex, () => new { triggerParameters, ID, TargetAddress });
 
                 return false;
             }

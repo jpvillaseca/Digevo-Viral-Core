@@ -1,4 +1,5 @@
 ﻿using Digevo.Viral.Gateway.Models.Entities;
+using Digevo.Viral.Gateway.Models.Entities.Landing;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -14,6 +15,8 @@ namespace Digevo.Viral.Gateway.Models
             {
 
             }
+
+        public DbSet<UserData> LandingUsers { get; set; }
 
         public DbSet<Campaign> Campaigns { get; set; }
 
