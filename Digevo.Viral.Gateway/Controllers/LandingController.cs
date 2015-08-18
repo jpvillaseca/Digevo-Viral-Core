@@ -1,6 +1,7 @@
 ﻿using Digevo.Viral.Gateway.Models;
 using Digevo.Viral.Gateway.Models.Entities;
 using Digevo.Viral.Gateway.Models.Entities.Landing;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,8 +18,10 @@ namespace Digevo.Viral.Gateway.Controllers
 
         // POST api/landing?campaignId=2
         [HttpPost]
-        public async Task<HttpResponseMessage> Post(int campaignId, [FromBody]dynamic rawUserData)
+        public async Task<HttpResponseMessage> Post(int campaignId, [FromBody]string jsonUserData)
         {
+            dynamic rawUserData = JsonConvert.DeserializeObject(jsonUserData);
+
             var userData = new UserData() { Name = rawUserData.Name, 
                 Phone = rawUserData.Phone, 
                 Birthday = rawUserData.Birthday, 
