@@ -15,6 +15,7 @@ namespace Digevo.Viral.Gateway.Controllers.FuenteDeseo
 
         // POST api/message?phone=3123123&arcane=7
         [HttpPost]
+        [Route("api/FuenteDeseo/Message")]
         public void Post(string phone, int arcane)
         {
             if (string.IsNullOrWhiteSpace(phone))

@@ -32,7 +32,7 @@ namespace Digevo.Viral.Gateway.Controllers
             var landingUser = context.LandingUsers.FirstOrDefault(user => user.Phone == userData.Phone || (user.Email == userData.Email && user.Phone == null));
             if (landingUser == null)
             {
-                context.LandingUsers.Add(userData);
+                landingUser = context.LandingUsers.Add(userData);
             }
             else
             {

@@ -15,10 +15,6 @@ namespace Digevo.Viral.Gateway.Models.Entities.Landing
 
         public string Phone { get; set; }
 
-        //public string Arcane { get; set; }
-
-        //public string ArcaneQuery { get; set; }
-
         public DateTimeOffset? Birthday { get; set; }
 
         public DateTimeOffset CreationDate { get; set; }

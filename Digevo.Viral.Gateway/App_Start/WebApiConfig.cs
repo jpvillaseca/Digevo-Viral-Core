@@ -9,8 +9,12 @@ namespace Digevo.Viral.Gateway
     {
         public static void Register(HttpConfiguration config)
         {
-            log4net.Config.XmlConfigurator.Configure(); 
-            
+            log4net.Config.XmlConfigurator.Configure();
+
+            // Attribute routing.
+            config.MapHttpAttributeRoutes();
+
+            //Convention based routing
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",

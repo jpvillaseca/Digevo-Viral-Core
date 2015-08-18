@@ -7,6 +7,8 @@ using System.Web;
 using Digevo.Viral.Gateway.Models.Infrastructure;
 using Digevo.Viral.Gateway.Models.Infrastructure.Extensions;
 using System.Web.WebPages;
+using System.ComponentModel.DataAnnotations;
+using System.Text;
 
 namespace Digevo.Viral.Gateway.Models.Entities
 {
@@ -39,6 +41,15 @@ namespace Digevo.Viral.Gateway.Models.Entities
             set;
         }
 
+        private string _httpMethod;
+
+        [MaxLength(30)]
+        public string HttpMethod
+        {
+            get { return string.IsNullOrWhiteSpace(_httpMethod) ? "GET" : _httpMethod; }
+            set { _httpMethod = value; }
+        }
+
         /// <summary>
         /// Executes a trigger interpolating every included parameter in the TargetAddress, such as {UserHandle}.  
         /// </summary>
@@ -46,38 +57,35 @@ namespace Digevo.Viral.Gateway.Models.Entities
         /// <returns>True if succesful, false othwerwise</returns>
         public async Task<bool> Execute(string UserHandle, string SeedUserHandle = "")
         {
-            try
+            dynamic triggerParameters = new
             {
-                var interpolatedTriggerAddress = TargetAddress.FormatWith(new
-                {
-                    UserHandle = UserHandle,
-                    SeedUserHandle = SeedUserHandle
-                });
+                UserHandle = UserHandle,
+                SeedUserHandle = SeedUserHandle
+            };
 
-                var request = (HttpWebRequest)WebRequest.Create(interpolatedTriggerAddress);
-                var response = (HttpWebResponse)await request.GetResponseAsync();
-
-                LogExtensions.Log.InfoCall(() => new { Operaton = "Executing trigger", UserHandle, interpolatedTriggerAddress, response.StatusCode });
-
-                return (int)response.StatusCode >= 200 && (int)response.StatusCode <= 399;
-            }
-            catch(Exception ex)
-            {
-                LogExtensions.Log.ErrorCall(ex, () => new { UserHandle, ID, TargetAddress });
-
-                return false;
-            }
+            return await Execute(triggerParameters);
         }
-
+        
+        /// <summary>
+        /// Executes a trigger interpolating every included parameter in the TargetAddress, such as {UserHandle}.  
+        /// </summary>
+        /// <param name="triggerParameters">Parameters to interpolate in the trigger service call</param>
+        /// <returns>True if succesful, false othwerwise</returns>
         public async Task<bool> Execute(dynamic triggerParameters)
         {
             try
             {
-                // TODO: Agregar verbo http como parámetro al trigger, porque ahora no hace envíos POSTs.
-
                 var interpolatedTriggerAddress = StringFormatExtensions.FormatWith(TargetAddress, triggerParameters);
 
-                var request = (HttpWebRequest)WebRequest.Create(interpolatedTriggerAddress);
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(interpolatedTriggerAddress);
+                request.Method = HttpMethod;
+
+                if (HttpMethod == "POST")
+                {
+                    request.ContentType = "application/x-www-form-urlencoded";
+                    request.ContentLength = 0;
+                }
+                    
                 var response = (HttpWebResponse)await request.GetResponseAsync();
 
                 LogExtensions.Log.InfoCall(() => new { Operaton = "Executing trigger with params", triggerParameters });
