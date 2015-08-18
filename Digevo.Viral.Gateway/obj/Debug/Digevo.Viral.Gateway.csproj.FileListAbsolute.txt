@@ -221,7 +221,6 @@ C:\Users\3GMOTION\Documents\GitHub\Digevo-Viral-Core\Digevo.Viral.Gateway\bin\zh
 C:\Users\3GMOTION\Documents\GitHub\Digevo-Viral-Core\Digevo.Viral.Gateway\bin\zh-Hant\System.Spatial.resources.dll
 C:\Users\3GMOTION\Documents\GitHub\Digevo-Viral-Core\Digevo.Viral.Gateway\obj\Debug\Digevo.Viral.Gateway.dll
 C:\Users\3GMOTION\Documents\GitHub\Digevo-Viral-Core\Digevo.Viral.Gateway\obj\Debug\Digevo.Viral.Gateway.pdb
-C:\Users\Juan Pablo Villaseca\Documents\Visual Studio 2013\Projects\Digevo.Viral.Engine\Digevo-Viral-Core\Digevo.Viral.Gateway\obj\Debug\Digevo.Viral.Gateway.csprojResolveAssemblyReference.cache
 E:\Documentos\Visual Studio 2015\Projects\Digevo-Viral-Core\Digevo.Viral.Gateway\bin\Digevo.Viral.Gateway.dll.config
 E:\Documentos\Visual Studio 2015\Projects\Digevo-Viral-Core\Digevo.Viral.Gateway\bin\Digevo.Viral.Gateway.dll
 E:\Documentos\Visual Studio 2015\Projects\Digevo-Viral-Core\Digevo.Viral.Gateway\bin\Digevo.Viral.Gateway.pdb

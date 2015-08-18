@@ -2,7 +2,7 @@
 using Digevo.Viral.Gateway.Models.Entities;
 using Digevo.Viral.Gateway.Models.Infrastructure.Extensions;
 using Digevo.Viral.Gateway.Models.Infrastructure.Settings;
-using Digevo.Viral.Gateway.Models.Infrastructure.UrlShortener;
+using Digevo.Viral.Gateway.Models.Infrastructure.Services.UrlShortener;
 using System;
 using System.Collections.Generic;
 using System.Linq;

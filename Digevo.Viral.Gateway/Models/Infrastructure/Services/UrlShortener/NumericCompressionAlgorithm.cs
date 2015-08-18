@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Digevo.Viral.Gateway.Models.Infrastructure.UrlShortener
+namespace Digevo.Viral.Gateway.Models.Infrastructure.Services.UrlShortener
 {
     /// <summary>
     /// Lossless compression algorithm to shorten numeric messages with characters

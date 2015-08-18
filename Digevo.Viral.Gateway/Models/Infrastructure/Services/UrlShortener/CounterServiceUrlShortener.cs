@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Digevo.Viral.Gateway.Models.Infrastructure.Extensions;
 using System.Web;
 
-namespace Digevo.Viral.Gateway.Models.Infrastructure.UrlShortener
+namespace Digevo.Viral.Gateway.Models.Infrastructure.Services.UrlShortener
 {
     public class CounterServiceUrlShortener : IUrlShortener
     {

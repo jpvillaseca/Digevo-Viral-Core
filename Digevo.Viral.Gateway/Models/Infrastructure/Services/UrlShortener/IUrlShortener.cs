@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Digevo.Viral.Gateway.Models.Infrastructure.UrlShortener
+namespace Digevo.Viral.Gateway.Models.Infrastructure.Services.UrlShortener
 {
     internal interface IUrlShortener
     {

@@ -261,3 +261,4 @@ FakesAssemblies/
 **/*.Server/GeneratedArtifacts
 **/*.Server/ModelManifest.xml
 _Pvt_Extensions
+Digevo.Viral.Gateway/fuenteDeseo.secureServicesMt.config

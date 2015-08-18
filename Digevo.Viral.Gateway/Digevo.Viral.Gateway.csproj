@@ -178,15 +178,22 @@
     <Compile Include="Models\Entities\ShareIntent.cs" />
     <Compile Include="Models\Entities\ShareCallback.cs" />
     <Compile Include="Models\Entities\Trigger.cs" />
+    <Compile Include="Models\Infrastructure\Extensions\XmlOutput.cs" />
+    <Compile Include="Models\Infrastructure\Services\SecureServices\HttpManager.cs" />
+    <Compile Include="Models\Infrastructure\Services\SecureServices\MtParams.cs" />
+    <Compile Include="Models\Infrastructure\Services\SecureServices\PhoneParams.cs" />
+    <Compile Include="Models\Infrastructure\Services\SecureServices\SecureServicesMT.cs" />
+    <Compile Include="Models\Infrastructure\Services\SecureServices\LoginParams.cs" />
     <Compile Include="Models\Infrastructure\Settings\ConfigurationSettings.cs" />
     <Compile Include="Models\Infrastructure\Extensions\LogExtensions.cs" />
+    <Compile Include="Models\Infrastructure\Settings\SecureServicesConfigurationSetting.cs" />
     <Compile Include="Models\Infrastructure\Triggers\AbstractTriggerFactory.cs" />
     <Compile Include="Models\Infrastructure\Triggers\AddPointsTriggerFactory.cs" />
     <Compile Include="Models\Infrastructure\Extensions\StringFormatExtensions.cs" />
-    <Compile Include="Models\Infrastructure\UrlShortener\NumericCompressionAlgorithm.cs" />
-    <Compile Include="Models\Infrastructure\UrlShortener\CounterServiceUrlShortener.cs" />
-    <Compile Include="Models\Infrastructure\UrlShortener\IUrlShortener.cs" />
-    <Compile Include="Models\Infrastructure\UrlShortener\WmlUrlShortener.cs" />
+    <Compile Include="Models\Infrastructure\Services\UrlShortener\NumericCompressionAlgorithm.cs" />
+    <Compile Include="Models\Infrastructure\Services\UrlShortener\CounterServiceUrlShortener.cs" />
+    <Compile Include="Models\Infrastructure\Services\UrlShortener\IUrlShortener.cs" />
+    <Compile Include="Models\Infrastructure\Services\UrlShortener\WmlUrlShortener.cs" />
     <Compile Include="Models\ViralDataContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -195,6 +202,8 @@
     <Content Include="Global.asax" />
     <Content Include="ConnectionStrings.config" />
     <Content Include="AppSettings.config" />
+    <Content Include="Models\Infrastructure\Services\SecureServices\secureServicesMt.config" />
+    <Content Include="fuenteDeseo.secureServicesMt.config" />
     <None Include="Properties\PublishProfiles\DevelopmentServer.pubxml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
