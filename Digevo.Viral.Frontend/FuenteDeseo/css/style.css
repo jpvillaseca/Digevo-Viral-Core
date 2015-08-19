@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 /* CSS Document */
 body{/* background-image:url(../img/bg.jpg); background-size:100%;*/ background-color:#000; font-family: 'Metamorphous', cursive;}
 .contenedor {background-image: url("../img/bg-contenedor.jpg");background-size: cover;width: 70% !important;padding: 0 26px !important;}
