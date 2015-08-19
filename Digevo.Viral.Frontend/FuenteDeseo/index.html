@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Fuente del Deseo</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Metamorphous&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+    <!-- jQuery -->
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+  
+  <ul class="cb-slideshow">
+            <li><span>Image 01</span><div></div></li>
+            <li><span>Image 02</span><div></div></li>
+            <li><span>Image 03</span><div></div></li>
+            <li><span>Image 04</span><div></div></li>
+            <li><span>Image 05</span><div></div></li>
+            <li><span>Image 06</span><div></div></li>
+        </ul>
+  
+  
+				<div class="container contenedor"><!--principal-->
+                
+                
+                	<div class="col-md-12 bloquelogo"><!--logo-->
+                    	<div class="col-md-4">
+                        </div>
+                        <div class="col-md-4">
+                        	<img class="logo" src="img/logo.png">
+                        </div>
+                        <div class="col-md-4">
+                        </div>
+                    </div><!--logo-->
+                    
+                    
+                    <div class="col-md-12"><!--titulo-->
+                    	<div class="col-md-2">
+                        </div>
+                        <div class="col-md-8">
+                        	<h1 class="titulo">¿QUIERES SABER CUÁL ES TU ARCANO?</h1>
+                        </div>
+                        <div class="col-md-2">
+                        </div>
+                    </div><!--titulo-->
+                    
+                    <div class="col-md-12"><!--contenido-->
+                    	<div class="col-md-1">
+                        </div>
+                        <div class="col-md-10">
+                            <div class="preguntas">
+                            	<h1 class="titulo borde1">Calcula tu arcano natal</h1><br><br>
+                                <form class="form-horizontal pad">
+                               
+                                    <fieldset>
+                                    <div class="col-md-12">
+    
+    	                                    <!-- Spinbox -->
+                                            <div class="col-md-4" id="formDay">
+                                        <select class="form-control" id="sel1" name="sel1">
+                                                              <option value="0">DÍA</option>
+                                                          </select>
+                                        </div>
+                                        <!-- Spinbox -->
+    	                                        <!-- Spinbox -->
+                                                <div class="col-md-4" id="formMonth">
+		                                         <select class="form-control" id="sel2" name="sel3">
+                                                              <option value="0">MES</option>
+                                                              <option value="01">Enero</option>
+                                                              <option value="02">Febrero</option>
+                                                              <option value="03">Marzo</option>
+                                                              <option value="04">Abril</option>
+                                                              <option value="05">Mayo</option>
+                                                              <option value="06">Junio</option>
+                                                              <option value="07">Julio</option>
+                                                              <option value="08">Agosto</option>
+                                                              <option value="09">Septiembre</option>
+                                                              <option value="10">Octubre</option>
+                                                              <option value="11">Noviembre</option>
+                                                              <option value="12">Diciembre</option>
+                                                          </select>
+                                        </div>
+                                        <!-- Spinbox -->
+                                                <div class="col-md-4" id="formYear">
+                                                    <select class="form-control" id="sel3" name="sel3">
+                                                        <option value="0">AÑO</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                        <div class="col-md-12">
+	                                        <div class="col-md-4">
+                                            </div>
+                                            <div class="col-md-4">
+                                            <div class="control-group">
+                                          <label class="control-label" for="singlebutton"></label>
+                                          <div class="controls">
+                                            <!--<button href="arcanos.html" id="singlebutton" name="singlebutton" class="btn-01"></button>-->
+                                            <a id="submit" href="arcanos.html" class="btn-02"></a>
+                                          </div>
+                                        </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                            </div>
+                                        </div>
+                                        <!-- Button -->
+
+
+                                        </fieldset>
+                                    </form>
+                                
+                                </div>
+                            </div>
+                        <div class="col-md-1">
+                        </div>
+                    </div><!--contenido-->
+                   
+                   
+                   <div class="col-md-12"><!--titulo2-->
+                    	<div class="col-md-1">
+                        </div>
+                        <div class="col-md-10">
+                            	<h1 class="titulo">Observa tus dones, cómo sacarles partido y qué te depara el año.</h1><br>
+
+
+                        </div>
+                        <div class="col-md-1">
+                        </div>
+                    </div><!--titulo2--> 
+                    
+                </div><!--principal-->
+        
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/bootstrap.min.js"></script>
+      <script type="text/javascript">
+          function validateDate(day, month, year)
+          {
+              var d = Date.parse(year + "-" + month + "-" + day);
+              if (isNaN(d))
+                  return false;
+              else
+                  return true;
+          }
+
+          $(window).load(function () {
+              for (var i = 1; i <= 31; i++) {
+                  if(i <= 9)
+                      $("#sel1").append(new Option(i, "0" + i));
+                  else
+                      $("#sel1").append(new Option(i, i));
+              }
+
+              for (var i = 1940; i < 2015; i++) {
+                  $("#sel3").append(new Option(i, i));
+              }
+
+              $("#submit").on("click", function (e) {
+                  e.preventDefault();
+
+                  if($("form").parent().hasClass("has-error"))
+                      $("form").parent().removeClass("has-error");
+                  
+                  $("form :input").each(function () {
+                      if ($(this).val() <= 0)
+                          $(this).parent().addClass("has-error");
+                      else
+                          $(this).parent().removeClass("has-error");
+                  });
+
+                  var day = $("#sel1").val();
+                  var month = $("#sel2").val();
+                  var year = $("#sel3").val();
+
+                  if (day > 0 && month > 0 && year > 0) { /* Ready to check */
+                      if (validateDate(day.toString(), month.toString(), year.toString())) /* Ready to go? */
+                          window.location = $(this).attr("href") + "?" + $("form").serialize();
+                      else
+                          $("form").parent().addClass("has-error");
+                  }
+              });
+          });
+          
+      </script>
+  </body>
+</html>
