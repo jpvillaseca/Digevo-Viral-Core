@@ -20,7 +20,7 @@ namespace Digevo.Viral.Gateway.Controllers
 
         // POST api/landing?campaignId=2
         [HttpPost]
-        [EnableCors(origins: "http://www.fuentedeldeseo.com", headers: "*", methods: "*")]
+        [EnableCors(origins: "http://www.fuentedeldeseo.com,http://fuentedeldeseo.com", headers: "*", methods: "*")]
         public async Task<HttpResponseMessage> Post(int campaignId, [FromBody]string jsonUserData)
         {
             dynamic rawUserData = JsonConvert.DeserializeObject(jsonUserData);
