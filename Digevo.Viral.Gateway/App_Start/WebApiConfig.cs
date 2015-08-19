@@ -10,9 +10,12 @@ namespace Digevo.Viral.Gateway
         public static void Register(HttpConfiguration config)
         {
             log4net.Config.XmlConfigurator.Configure();
+            //CORS
+            config.EnableCors();
 
-            // Attribute routing.
+            //Attribute routing.
             config.MapHttpAttributeRoutes();
+
 
             //Convention based routing
             config.Routes.MapHttpRoute(

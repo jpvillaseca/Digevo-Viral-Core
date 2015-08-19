@@ -10,6 +10,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <_PublishTargetUrl>ftp://54.207.51.154</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
+    <File Include="AppSettings.config">
+      <publishTime>08/18/2015 18:23:33</publishTime>
+    </File>
     <File Include="bin/Antlr3.Runtime.dll">
       <publishTime>07/10/2015 14:02:34</publishTime>
     </File>
@@ -23,10 +26,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/10/2015 14:02:28</publishTime>
     </File>
     <File Include="bin/Digevo.Viral.Gateway.dll">
-      <publishTime>08/10/2015 14:17:09</publishTime>
+      <publishTime>08/18/2015 19:07:21</publishTime>
     </File>
     <File Include="bin/Digevo.Viral.Gateway.pdb">
-      <publishTime>08/10/2015 14:17:09</publishTime>
+      <publishTime>08/18/2015 19:07:21</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>07/10/2015 13:00:15</publishTime>
@@ -112,8 +115,14 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/System.Spatial.dll">
       <publishTime>07/10/2015 14:02:28</publishTime>
     </File>
+    <File Include="bin/System.Web.Cors.dll">
+      <publishTime>08/18/2015 18:17:38</publishTime>
+    </File>
     <File Include="bin/System.Web.Helpers.dll">
       <publishTime>07/10/2015 14:02:22</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.Cors.dll">
+      <publishTime>08/18/2015 18:17:38</publishTime>
     </File>
     <File Include="bin/System.Web.Http.dll">
       <publishTime>07/10/2015 13:49:46</publishTime>
@@ -168,6 +177,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="bin/zh-Hant/System.Spatial.resources.dll">
       <publishTime>07/10/2015 14:02:28</publishTime>
+    </File>
+    <File Include="ConnectionStrings.config">
+      <publishTime>08/18/2015 09:55:08</publishTime>
     </File>
     <File Include="Content/Site.css">
       <publishTime>07/10/2015 14:02:03</publishTime>
@@ -337,11 +349,17 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="favicon.ico">
       <publishTime>07/10/2015 14:02:03</publishTime>
     </File>
+    <File Include="fuenteDeseo.secureServicesMt.config">
+      <publishTime>08/18/2015 15:32:56</publishTime>
+    </File>
     <File Include="Global.asax">
       <publishTime>07/10/2015 14:02:03</publishTime>
     </File>
+    <File Include="Models/Infrastructure/Services/SecureServices/secureServicesMt.config">
+      <publishTime>08/18/2015 15:37:34</publishTime>
+    </File>
     <File Include="packages.config">
-      <publishTime>07/22/2015 10:45:52</publishTime>
+      <publishTime>08/18/2015 18:17:40</publishTime>
     </File>
     <File Include="Scripts/jquery-1.8.2.js">
       <publishTime>10/07/2015 14:02:16</publishTime>
@@ -404,7 +422,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/20/2015 17:53:22</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>08/10/2015 14:17:14</publishTime>
+      <publishTime>08/18/2015 19:07:26</publishTime>
     </File>
   </ItemGroup>
 </Project>

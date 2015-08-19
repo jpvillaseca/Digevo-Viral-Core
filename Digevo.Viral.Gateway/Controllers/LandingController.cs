@@ -1,6 +1,7 @@
 ﻿using Digevo.Viral.Gateway.Models;
 using Digevo.Viral.Gateway.Models.Entities;
 using Digevo.Viral.Gateway.Models.Entities.Landing;
+using Digevo.Viral.Gateway.Models.Infrastructure.Extensions;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace Digevo.Viral.Gateway.Controllers
 {
@@ -18,6 +20,7 @@ namespace Digevo.Viral.Gateway.Controllers
 
         // POST api/landing?campaignId=2
         [HttpPost]
+        [EnableCors(origins: "*", headers: "*", methods: "*")]
         public async Task<HttpResponseMessage> Post(int campaignId, [FromBody]string jsonUserData)
         {
             dynamic rawUserData = JsonConvert.DeserializeObject(jsonUserData);
@@ -27,6 +30,8 @@ namespace Digevo.Viral.Gateway.Controllers
                 Birthday = rawUserData.Birthday, 
                 Email = rawUserData.Email, 
                 CreationDate = DateTimeOffset.Now };
+
+            LogExtensions.Log.DebugCall(() => userData);
 
             var campaign = context.Campaigns.Include("OnShareConversionTriggers").FirstOrDefault(x => x.ID == campaignId);
             if (campaign == null)
