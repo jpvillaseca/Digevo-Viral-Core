@@ -26,13 +26,12 @@ namespace Digevo.Viral.Gateway.Controllers.FuenteDeseo
             try
             {
                 var text = System.Configuration.ConfigurationManager.AppSettings["FuenteDeseo.Arcane." + arcane.ToString()];
-
-
                 var settings = Settings;
+
                 Random r = new Random();
                 var rand = (new Random()).Next(int.MaxValue);
                 LogExtensions.Log.InfoCall(() => new { phone, smsText = text, transactionId = rand });
-                SecureServicesMt.SendMT(new LoginParams(rand, settings.Credentials.Login, settings.Credentials.Password, Settings.ServiceEndpoint), new MtParams(text, settings.MT.NC), new PhoneParams(phone.Replace("+", string.Empty), settings.MT.Op));
+                SecureServicesMt.SendMT(new LoginParams(rand, settings.Credentials.Login, settings.Credentials.Password, Settings.ServiceEndpoint), new MtParams(text, settings.MT.NC), new PhoneParams(phone.Replace("+", string.Empty).Trim(), settings.MT.Op));
             }
             catch (Exception ex)
             {
