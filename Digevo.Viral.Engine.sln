@@ -1,10 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Digevo.Viral.Gateway", "Digevo.Viral.Gateway\Digevo.Viral.Gateway.csproj", "{44E49E97-BEE5-411C-B195-DE120EBA140D}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{D14A1A61-63F0-4A8F-B050-A87A84569842}"
 	ProjectSection(SolutionItems) = preProject
 		Build.proj = Build.proj
@@ -18,6 +16,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demos", "Demos", "{556D29F3
 		DnnViralDemo.txt = DnnViralDemo.txt
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Digevo.Viral.Gateway", "Digevo.Viral.Gateway\Digevo.Viral.Gateway.csproj", "{44E49E97-BEE5-411C-B195-DE120EBA140D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Digevo.Viral.Frontend", "Digevo.Viral.Frontend\Digevo.Viral.Frontend.csproj", "{DD21AE5C-5662-4116-9983-31E464C2EE84}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,6 +30,9 @@ Global
 		{44E49E97-BEE5-411C-B195-DE120EBA140D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44E49E97-BEE5-411C-B195-DE120EBA140D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44E49E97-BEE5-411C-B195-DE120EBA140D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD21AE5C-5662-4116-9983-31E464C2EE84}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{DD21AE5C-5662-4116-9983-31E464C2EE84}.Release|Any CPU.ActiveCfg = Debug|x86
+		{DD21AE5C-5662-4116-9983-31E464C2EE84}.Release|Any CPU.Build.0 = Debug|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

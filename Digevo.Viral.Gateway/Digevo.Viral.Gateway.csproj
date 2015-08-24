@@ -8,7 +8,7 @@
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{44E49E97-BEE5-411C-B195-DE120EBA140D}</ProjectGuid>
-    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Digevo.Viral.Gateway</RootNamespace>
@@ -20,6 +20,13 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>12.0</OldToolsVersion>
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -61,6 +68,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -69,6 +80,10 @@
     <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.3\lib\net45\System.Web.Http.Cors.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.Http.Tracing, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -156,33 +171,47 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\FuenteDeseo\MessageController.cs" />
+    <Compile Include="Controllers\LandingController.cs" />
     <Compile Include="Controllers\ShareLinkController.cs" />
     <Compile Include="Controllers\ViewIntentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Entities\Landing\UserData.cs" />
     <Compile Include="Models\Entities\TriggerClaim.cs" />
     <Compile Include="Models\Enums\TriggerType.cs" />
     <Compile Include="Models\Entities\Campaign.cs" />
     <Compile Include="Models\Entities\ShareIntent.cs" />
     <Compile Include="Models\Entities\ShareCallback.cs" />
     <Compile Include="Models\Entities\Trigger.cs" />
+    <Compile Include="Models\Infrastructure\Extensions\XmlOutput.cs" />
+    <Compile Include="Models\Infrastructure\Services\SecureServices\HttpManager.cs" />
+    <Compile Include="Models\Infrastructure\Services\SecureServices\MtParams.cs" />
+    <Compile Include="Models\Infrastructure\Services\SecureServices\PhoneParams.cs" />
+    <Compile Include="Models\Infrastructure\Services\SecureServices\SecureServicesMT.cs" />
+    <Compile Include="Models\Infrastructure\Services\SecureServices\LoginParams.cs" />
     <Compile Include="Models\Infrastructure\Settings\ConfigurationSettings.cs" />
     <Compile Include="Models\Infrastructure\Extensions\LogExtensions.cs" />
+    <Compile Include="Models\Infrastructure\Settings\SecureServicesConfigurationSetting.cs" />
     <Compile Include="Models\Infrastructure\Triggers\AbstractTriggerFactory.cs" />
     <Compile Include="Models\Infrastructure\Triggers\AddPointsTriggerFactory.cs" />
     <Compile Include="Models\Infrastructure\Extensions\StringFormatExtensions.cs" />
-    <Compile Include="Models\Infrastructure\UrlShortener\NumericCompressionAlgorithm.cs" />
-    <Compile Include="Models\Infrastructure\UrlShortener\CounterServiceUrlShortener.cs" />
-    <Compile Include="Models\Infrastructure\UrlShortener\IUrlShortener.cs" />
-    <Compile Include="Models\Infrastructure\UrlShortener\WmlUrlShortener.cs" />
+    <Compile Include="Models\Infrastructure\Services\UrlShortener\NumericCompressionAlgorithm.cs" />
+    <Compile Include="Models\Infrastructure\Services\UrlShortener\CounterServiceUrlShortener.cs" />
+    <Compile Include="Models\Infrastructure\Services\UrlShortener\IUrlShortener.cs" />
+    <Compile Include="Models\Infrastructure\Services\UrlShortener\WmlUrlShortener.cs" />
     <Compile Include="Models\ViralDataContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="ConnectionStrings.config" />
+    <Content Include="AppSettings.config" />
+    <Content Include="Models\Infrastructure\Services\SecureServices\secureServicesMt.config" />
+    <Content Include="fuenteDeseo.secureServicesMt.config" />
     <None Include="Properties\PublishProfiles\DevelopmentServer.pubxml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

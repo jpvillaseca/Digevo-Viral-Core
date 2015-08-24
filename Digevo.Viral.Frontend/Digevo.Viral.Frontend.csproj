@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{DD21AE5C-5662-4116-9983-31E464C2EE84}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="FuenteDeseo\css\" />
+    <Folder Include="FuenteDeseo\fonts\" />
+    <Folder Include="FuenteDeseo\images\" />
+    <Folder Include="FuenteDeseo\img\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FuenteDeseo\arcanos.html" />
+    <Content Include="FuenteDeseo\index.html" />
+    <Content Include="FuenteDeseo\js\bootstrap.js" />
+    <Content Include="FuenteDeseo\js\bootstrap.min.js" />
+    <Content Include="FuenteDeseo\js\init.js" />
+    <Content Include="FuenteDeseo\js\intlTelInput.min.js" />
+    <Content Include="FuenteDeseo\js\npm.js" />
+  </ItemGroup>
+</Project>
