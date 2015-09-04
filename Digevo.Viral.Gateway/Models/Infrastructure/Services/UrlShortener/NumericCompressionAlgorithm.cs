@@ -10,37 +10,66 @@ namespace Digevo.Viral.Gateway.Models.Infrastructure.Services.UrlShortener
     /// </summary>
     public static class NumericCompressionAlgorithm
     {
-        private static string dict = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        private const string dictionary = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-        public static long Decompress(string compressed)
+        public static long Decompress(string number)
         {
-            long number = 0;
+            int radix = dictionary.Length;
 
-            for (int i = 0; i < compressed.Length - 1; i++)
-                number += (long)Math.Pow(dict.IndexOf(compressed[i]), (4 - i) >= 2 ? (4 - i) : 2);
+            if (String.IsNullOrEmpty(number))
+                return 0;
 
-            number += dict.IndexOf(compressed[compressed.Length - 1]);
+            long result = 0;
+            long multiplier = 1;
+            for (int i = number.Length - 1; i >= 0; i--)
+            {
+                char c = number[i];
+                if (i == 0 && c == '-')
+                {
+                    // This is the negative sign symbol
+                    result = -result;
+                    break;
+                }
 
-            return number;
+                int digit = dictionary.IndexOf(c);
+                if (digit == -1)
+                    throw new ArgumentException(
+                        "Invalid character in the arbitrary numeral system number",
+                        "number");
+
+                result += digit * multiplier;
+                multiplier *= radix;
+            }
+
+            return result;
         }
 
-        public static string Compress(long number)
+        public static string Compress(long decimalNumber)
         {
-            var compressed = "";
+            int radix = dictionary.Length;
+            const int BitsInLong = 64;
 
-            //Iterate over maximum allowed factor
-            for (int j = 4; j > 1 || (number > dict.Length - 1); j--)
-                for (int i = dict.Length - 1; i >= 0; i--)
-                    if (number >= Math.Pow(i, j >= 2 ? j : 2))
-                    {
-                        compressed += dict[i].ToString(); //Expand word
-                        number -= (long)Math.Pow(i, j >= 2 ? j : 2);
-                        break;
-                    }
+            if (decimalNumber == 0)
+                return "0";
 
-            compressed += dict[(int)number].ToString();
+            int index = BitsInLong - 1;
+            long currentNumber = Math.Abs(decimalNumber);
+            char[] charArray = new char[BitsInLong];
 
-            return compressed;
+            while (currentNumber != 0)
+            {
+                int remainder = (int)(currentNumber % radix);
+                charArray[index--] = dictionary[remainder];
+                currentNumber = currentNumber / radix;
+            }
+
+            string result = new String(charArray, index + 1, BitsInLong - index - 1);
+            if (decimalNumber < 0)
+            {
+                result = "-" + result;
+            }
+
+            return result;
         }
     }
 }

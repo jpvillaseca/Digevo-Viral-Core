@@ -299,4 +299,3 @@ E:\Documentos\Visual Studio 2015\Projects\Digevo-Viral-Core\Digevo.Viral.Gateway
 C:\Users\Juan Pablo Villaseca\Documents\Visual Studio 2013\Projects\Digevo.Viral.Engine\Digevo-Viral-Core\Digevo.Viral.Gateway\bin\System.Web.Cors.dll
 C:\Users\Juan Pablo Villaseca\Documents\Visual Studio 2013\Projects\Digevo.Viral.Engine\Digevo-Viral-Core\Digevo.Viral.Gateway\bin\System.Web.Http.Cors.dll
 C:\Users\Juan Pablo Villaseca\Documents\Visual Studio 2013\Projects\Digevo.Viral.Engine\Digevo-Viral-Core\Digevo.Viral.Gateway\bin\System.Web.Http.Cors.xml
-C:\Users\Juan Pablo Villaseca\Documents\Visual Studio 2013\Projects\Digevo.Viral.Engine\Digevo-Viral-Core\Digevo.Viral.Gateway\obj\Debug\Digevo.Viral.Gateway.csprojResolveAssemblyReference.cache

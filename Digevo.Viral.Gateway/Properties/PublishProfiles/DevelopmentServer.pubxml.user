@@ -11,7 +11,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="AppSettings.config">
-      <publishTime>08/18/2015 18:23:33</publishTime>
+      <publishTime>08/24/2015 18:55:50</publishTime>
     </File>
     <File Include="bin/Antlr3.Runtime.dll">
       <publishTime>07/10/2015 14:02:34</publishTime>
@@ -26,10 +26,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/10/2015 14:02:28</publishTime>
     </File>
     <File Include="bin/Digevo.Viral.Gateway.dll">
-      <publishTime>08/24/2015 18:14:48</publishTime>
+      <publishTime>09/01/2015 18:24:34</publishTime>
     </File>
     <File Include="bin/Digevo.Viral.Gateway.pdb">
-      <publishTime>08/24/2015 18:14:48</publishTime>
+      <publishTime>09/01/2015 18:24:34</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>07/10/2015 13:00:15</publishTime>
@@ -356,10 +356,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/10/2015 14:02:03</publishTime>
     </File>
     <File Include="Models/Infrastructure/Services/SecureServices/secureServicesMt.config">
-      <publishTime>08/18/2015 15:37:34</publishTime>
+      <publishTime>08/24/2015 18:55:50</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>08/18/2015 18:17:40</publishTime>
+      <publishTime>08/24/2015 18:55:50</publishTime>
     </File>
     <File Include="Scripts/jquery-1.8.2.js">
       <publishTime>10/07/2015 14:02:16</publishTime>
@@ -422,7 +422,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/20/2015 17:53:22</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>08/24/2015 18:18:38</publishTime>
+      <publishTime>09/01/2015 18:24:42</publishTime>
     </File>
   </ItemGroup>
 </Project>
