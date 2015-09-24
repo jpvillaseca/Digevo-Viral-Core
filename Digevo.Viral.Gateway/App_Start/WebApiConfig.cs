@@ -25,6 +25,12 @@ namespace Digevo.Viral.Gateway
             );
 
             config.Routes.MapHttpRoute(
+                name: "UrlShortenningApi",
+                routeTemplate: "{campaignId}/{alias}",
+                defaults: new { controller = "ShortenUrl" }
+            );
+
+            config.Routes.MapHttpRoute(
                 name: "NoSlashApi",
                 routeTemplate: "{*wildcard}",
                 defaults: new { controller = "SimPush", c = RouteParameter.Optional, p = RouteParameter.Optional}

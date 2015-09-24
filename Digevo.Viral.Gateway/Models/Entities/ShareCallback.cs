@@ -58,5 +58,16 @@ namespace Digevo.Viral.Gateway.Models
             get;
             set;
         }
+
+        [MaxLength(64)]
+        public string IP { get; set; }
+
+        public string UserAgent { get; set; }
+
+        [MaxLength(250)]
+        public string OperatingSystem { get; set; }
+
+        public string TargetUrlRedirection { get; set; }
+
     }
 }

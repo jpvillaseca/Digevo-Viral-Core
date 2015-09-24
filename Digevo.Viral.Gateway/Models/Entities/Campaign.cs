@@ -71,5 +71,13 @@ namespace Digevo.Viral.Gateway.Models.Entities
             get;
             set;
         }
+
+        public string TargetAddressAndroid { get; set; }
+
+        public string TargetAddressIOS { get; set; }
+
+        public string TargetAddressInactiveCampaign { get; set; }
+
+        public string TargetAddressWindowsPhone { get; set; }
     }
 }
